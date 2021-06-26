@@ -39,10 +39,15 @@ export async function getServerSideProps(context) {
   const slug = context.query.slug
   // find post from data source
   const post = posts.find(_post => _post.slug === slug)
-  
-  return {
-    props: {
-      post
-    },
+  if (post) {
+    return {
+      props: {
+        post
+      },
+    }
+  } else {
+    return {
+      notFound: true
+    }
   }
 }
