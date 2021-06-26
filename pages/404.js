@@ -16,12 +16,12 @@ export default function Custom404() {
 
         <div className={styles.grid}>
           <img src="/undraw_not_found_60pq.svg" height="500"/>
-          Illustration from <a href="https://undraw.co/">undraw.co/</a>
+          Illustration from&nbsp;<a href="https://undraw.co/">undraw.co/</a>
         </div>
       </main>
 
       <footer className={styles.footer}>
-        My blog made with <a href="https://developers.notion.com/" target="_blank" rel="noopener noreferrer">Notio.so API</a>
+        My blog made with&nbsp;<a href="https://developers.notion.com/" target="_blank" rel="noopener noreferrer">Notio.so API</a>
       </footer>
     </div>
   )

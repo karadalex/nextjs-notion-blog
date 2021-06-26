@@ -28,7 +28,7 @@ export default function Post({ post }) {
       </main>
 
       <footer className={styles.footer}>
-        My blog made with <a href="https://developers.notion.com/" target="_blank" rel="noopener noreferrer">Notio.so API</a>
+        My blog made with&nbsp;<a href="https://developers.notion.com/" target="_blank" rel="noopener noreferrer">Notio.so API</a>
       </footer>
     </div>
   )
