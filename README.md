@@ -2,6 +2,7 @@ NextJS Blog using the [Notion](https://developers.notion.com/) API
 ==================================================================
 
 ![](./docs/index.png)
+![](./docs/notion-database-structure.png)
 
 ## Getting Started
 
