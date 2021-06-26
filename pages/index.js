@@ -23,7 +23,7 @@ export default function Home() {
 
         <div className={styles.grid}>
           {posts.map(post => (
-            <a href={post.slug} className={styles.card}>
+            <a href={`/blog/${post.slug}`} className={styles.card}>
               <h3>{post.title}</h3>
               <Image 
                 src={post.image}
