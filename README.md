@@ -1,9 +1,14 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+NextJS Blog using the [Notion](https://developers.notion.com/) API
+==================================================================
+
+![](./docs/index.png)
 
 ## Getting Started
 
-First, run the development server:
+- Setup Notion (see blog post tutorial that is coming soon)
+- Copy `.env.example` file to `.env.local` and add your Notion API secret token and database ID
 
+and then run the development server:
 ```bash
 npm run dev
 # or
@@ -20,14 +25,9 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+_Blog post tutorial coming soon_
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
+## Deployment
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
