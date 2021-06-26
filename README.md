@@ -5,7 +5,7 @@ NextJS Blog using the [Notion](https://developers.notion.com/) API
 
 ## Getting Started
 
-- Setup Notion (see blog post tutorial that is coming soon)
+- Setup Notion (see blog post [tutorial](https://medium.com/@karadalex/create-a-blog-with-nextjs-and-notion-as-a-cms-f0a7dde06921))
 - Copy `.env.example` file to `.env.local` and add your Notion API secret token and database ID
 
 and then run the development server:
@@ -25,7 +25,7 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 ## Learn More
 
-_Blog post tutorial coming soon_
+Learn more at [this blog post tutorial](https://medium.com/@karadalex/create-a-blog-with-nextjs-and-notion-as-a-cms-f0a7dde06921)
 
 ## Deployment
 
