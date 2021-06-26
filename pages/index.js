@@ -1,64 +1,78 @@
 import Head from 'next/head'
+import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+
+const posts = [
+  {
+    title: "First blog post",
+    description: "this is a description",
+    tags: ["tag1", "tag2", "tag3"],
+    image: "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80",
+    slug: "first-blog-post",
+    date: "23/06/2021"
+  },
+  {
+    title: "Second blog post",
+    description: "this is a description",
+    tags: ["tag1", "tag2", "tag3"],
+    image: "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80",
+    slug: "second-blog-post",
+    date: "23/06/2021"
+  },
+  {
+    title: "Third blog post",
+    description: "this is a description",
+    tags: ["tag1", "tag2", "tag3"],
+    image: "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80",
+    slug: "third-blog-post",
+    date: "23/06/2021"
+  },
+  {
+    title: "Fourth blog post",
+    description: "this is a description",
+    tags: ["tag1", "tag2", "tag3"],
+    image: "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80",
+    slug: "fourth-blog-post",
+    date: "23/06/2021"
+  }
+]
 
 export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>Blog</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Welcome to my <a href="#">Blog</a>
         </h1>
 
         <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
+          Powered by the
+          <code className={styles.code}>Notion API</code>
         </p>
 
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+          {posts.map(post => (
+            <a href={post.slug} className={styles.card}>
+              <h3>{post.title}</h3>
+              <Image 
+                src={post.image}
+                width="200"
+                height="120"
+              /><br/>
+              <small>{post.date}</small>
+              <p>{post.description}</p>
+            </a>
+          ))}
         </div>
       </main>
 
       <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
+        My blog made with <a href="https://developers.notion.com/" target="_blank" rel="noopener noreferrer">Notio.so API</a>
       </footer>
     </div>
   )
