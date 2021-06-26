@@ -1,8 +1,6 @@
-import { useEffect } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-// import posts from "../data/posts"
 
 
 export default function Home({ posts }) {
@@ -72,8 +70,10 @@ export async function getServerSideProps(context) {
 
   const response = await fetch(`https://api.notion.com/v1/databases/${database_id}/query`, options)
   const responseData = await response.json()
-  // TODO: Filter posts by the published boolean field
-  const posts = responseData.results.map(pageObj => {
+  
+  // Filter posts by the published boolean field and change results schema to match the schema from the 
+  // data/posts.js file
+  const posts = responseData.results.filter(pageObj => pageObj.properties.published.checkbox).map(pageObj => {
     return {
       id: pageObj.id,
       title: pageObj.properties.title.title[0].plain_text,
