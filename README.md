@@ -42,8 +42,9 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 Learn more at [this blog post tutorial](https://medium.com/@karadalex/create-a-blog-with-nextjs-and-notion-as-a-cms-f0a7dde06921)
 
+
 ## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Deploy the example using [Vercel](https://vercel.com?utm_source=github):
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/karadalex/nextjs-notion-blog)
