@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Footer from '../../components/Footer'
 import Author from '../../components/Author'
+import { dateIsoStringToReadable } from '../../utils/date'
 import styles from '../../styles/Home.module.css'
 
 
@@ -22,6 +23,7 @@ export default function Post({ post }) {
         </h2>
 
         <Author author={post.author}/>
+        <small>{dateIsoStringToReadable(post.date)}</small>
 
         <img src={post.image}/>
 

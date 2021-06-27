@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Footer from '../components/Footer'
+import { dateIsoStringToReadable } from '../utils/date'
 import styles from '../styles/Home.module.css'
 
 
@@ -32,7 +33,7 @@ export default function Home({ posts }) {
                 width="200"
                 height="120"
               /><br/>
-              <small>{post.date}</small>
+              <small>{dateIsoStringToReadable(post.date)}</small>
               <p>{post.description}</p>
             </a>
           ))}
