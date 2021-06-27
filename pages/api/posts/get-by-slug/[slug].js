@@ -1,6 +1,4 @@
-export default async function getPostBySlug(req, res) {
-  const slug = req.query.slug
-
+export async function getPostBySlug(slug) {
   const secret = process.env.NOTION_API_KEY
   const database_id = process.env.NOTION_DATABASE_ID
 
@@ -63,6 +61,21 @@ export default async function getPostBySlug(req, res) {
       return block.paragraph.text[0].plain_text
     })
 
-    res.status(200).json(post)
+    return {
+      ok: true,
+      post
+    }
+  } else return {
+    ok: false
+  }
+}
+
+
+export default async function getPostBySlugAPI(req, res) {
+  const slug = req.query.slug
+  const response = await getPostBySlug(slug)
+
+  if (response.ok) {
+    res.status(200).json(response.post)
   } else res.status(404).json({ message: `Blog post with slug ${slug} was not found` })
 }

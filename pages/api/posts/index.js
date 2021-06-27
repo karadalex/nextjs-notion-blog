@@ -1,4 +1,4 @@
-export default async function getPosts(req, res) {
+export async function getPosts() {
   const secret = process.env.NOTION_API_KEY
   const database_id = process.env.NOTION_DATABASE_ID
 
@@ -37,6 +37,11 @@ export default async function getPosts(req, res) {
       date: pageObj.properties.date.last_edited_time,
     }
   })
-  
+
+  return posts
+}
+
+export default async function getPostsApi(req, res) {
+  const posts = await getPosts()
   res.status(200).json(posts)
 }

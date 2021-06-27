@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Footer from '../components/Footer'
 import { dateIsoStringToReadable } from '../utils/date'
+import { getPosts } from './api/posts'
 import styles from '../styles/Home.module.css'
 
 
@@ -45,13 +46,13 @@ export default function Home({ posts }) {
   )
 }
 
-export async function getServerSideProps(context) {
-  const response = await fetch("http://localhost:3000/api/posts")
-  const posts = await response.json()
+export async function getStaticProps(context) {
+  const posts = await getPosts()
   
   return {
     props: {
       posts
-    }
+    },
+    revalidate: 60
   }
 }

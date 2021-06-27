@@ -3,6 +3,8 @@ import Footer from '../../components/Footer'
 import Author from '../../components/Author'
 import Tags from '../../components/Tags'
 import { dateIsoStringToReadable } from '../../utils/date'
+import { getPosts } from '../api/posts'
+import { getPostBySlug } from '../api/posts/get-by-slug/[slug]'
 import styles from '../../styles/Home.module.css'
 
 
@@ -42,16 +44,31 @@ export default function Post({ post }) {
 }
 
 
-export async function getServerSideProps(context) {
-  const slug = context.query.slug
-  const response = await fetch(`http://localhost:3000/api/posts/get-by-slug/${slug}`)
+export async function getStaticPaths() {
+  const posts = await getPosts()
+  const paths = posts.map(post => {
+    return {
+      params: { slug: post.slug }
+    }
+  })
+
+  return {
+    paths,
+    fallback: false
+  };
+}
+
+
+export async function getStaticProps(context) {
+  const slug = context.params.slug
+  const response = await getPostBySlug(slug)
 
   if (response.ok) {
-    const post = await response.json()
     return {
       props: {
-        post
-      }
+        post: response.post
+      },
+      revalidate: 60
     }
 
   } else {

@@ -31,8 +31,8 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 - [x] List of blog posts from Notion Database
 - [x] Page content from Notion
 - [x] Blog post metadata (date, author, tags)
-- [ ] Incremental Static Regeneration
-- [ ] NextJS API endpoints
+- [x] Incremental Static Regeneration
+- [x] NextJS API endpoints (useful if you want to consume the same data from other apps), both dynamic and static fetching of content
 - [ ] Pagination
 - [ ] Search
 - [ ] Filter by tags
