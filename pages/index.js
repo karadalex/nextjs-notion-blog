@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Footer from '../components/Footer'
 import styles from '../styles/Home.module.css'
 
 
@@ -38,9 +39,7 @@ export default function Home({ posts }) {
         </div>
       </main>
 
-      <footer className={styles.footer}>
-        My blog made with&nbsp;<a href="https://developers.notion.com/" target="_blank" rel="noopener noreferrer">Notio.so API</a>
-      </footer>
+      <Footer/>
     </div>
   )
 }
