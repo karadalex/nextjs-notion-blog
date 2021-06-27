@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Footer from '../../components/Footer'
 import Author from '../../components/Author'
+import Tags from '../../components/Tags'
 import { dateIsoStringToReadable } from '../../utils/date'
 import styles from '../../styles/Home.module.css'
 
@@ -24,12 +25,13 @@ export default function Post({ post }) {
 
         <Author author={post.author}/>
         <small>{dateIsoStringToReadable(post.date)}</small>
+        <Tags tags={post.tags}/>
 
         <img src={post.image}/>
 
         <div className={styles.grid}>
-          {post.body.map(paragraph => (
-            <p>{paragraph}</p>
+          {post.body.map((paragraph, index) => (
+            <p key={`paragraph-${index}`}>{paragraph}</p>
           ))}
         </div>
       </main>

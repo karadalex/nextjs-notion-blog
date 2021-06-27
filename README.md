@@ -1,6 +1,8 @@
 NextJS Blog using the [Notion](https://developers.notion.com/) API
 ==================================================================
 
+The simplest Blog with Notion as a CMS and NextJS with only 3 dependencies!
+
 ![](./docs/index.png)
 ![](./docs/notion-database-structure.png)
 
@@ -23,6 +25,18 @@ You can start editing the page by modifying `pages/index.js`. The page auto-upda
 [API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+
+## Features
+
+- [x] List of blog posts from Notion Database
+- [x] Page content from Notion
+- [x] Blog post metadata (date, author, tags)
+- [ ] Incremental Static Regeneration
+- [ ] NextJS API endpoints
+- [ ] Pagination
+- [ ] Search
+- [ ] Filter by tags
+- [ ] Advanced content parsing (Notion Blocks)
 
 ## Learn More
 
