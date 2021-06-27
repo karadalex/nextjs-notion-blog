@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Footer from '../../components/Footer'
+import Author from '../../components/Author'
 import styles from '../../styles/Home.module.css'
 
 
@@ -16,9 +17,11 @@ export default function Post({ post }) {
           {post.title}
         </h1>
 
-        <p className={styles.description}>
+        <h2 className={styles.description}>
           {post.description}
-        </p>
+        </h2>
+
+        <Author author={post.author}/>
 
         <img src={post.image}/>
 
@@ -84,6 +87,10 @@ export async function getServerSideProps(context) {
       image: pageObj.properties.image.url,
       slug: pageObj.properties.slug.rich_text[0].plain_text,
       date: pageObj.properties.date.last_edited_time,
+      author: {
+        name: pageObj.properties.author.created_by.name,
+        avatar: pageObj.properties.author.created_by.avatar_url,
+      }
     }
 
     // Get page content

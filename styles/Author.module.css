@@ -1,0 +1,18 @@
+.avatarContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  padding: 30px;
+}
+
+.avatar {
+  height: 30px;
+  border-radius: 50%;
+}
+
+.authorName {
+  height: 30px;
+  padding-left: 10px;
+  padding-top: 4px;
+}
